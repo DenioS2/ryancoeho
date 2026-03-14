@@ -1,0 +1,368 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#cima {
+    list-style: none; /* Remove as bolinhas da lista */
+    display: flex; /* Alinha os itens na horizontal */
+    gap: 25px;     /* Espaçamento entre os links */
+    padding: 10px 20px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#cima li a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: #333; /* Cor cinza escuro padrão */
+}
+
+/* Aplicando as cores específicas de cada marca */
+#cima li:nth-child(1) a { color: #0077e6; } /* globo.com - azul */
+#cima li:nth-child(2) a { color: #d11212; } /* g1 - vermelho */
+#cima li:nth-child(3) a { color: #008833; } /* ge - verde */
+#cima li:nth-child(4) a { color: #ff8800; } /* gshow - laranja */
+#cima li:nth-child(5) a { color: #e6004c; } /* globoplay - rosa */
+#cima li:nth-child(6) a { color: #b31414; } /* g1 jogos - vermelho escuro */
+#cima li:nth-child(7) a { color: #003399; } /* o globo - azul escuro */
+#cima li:nth-child(8) a { color: #008080; } /* valor - verde petróleo */
+
+.barra-vermelha {
+    background-color: rgb(196,23,12);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.lado-esquerdo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre o botão e a logo */
+}
+
+/* Estilo do Botão MENU */
+.menu-botao {
+    background-color: rgb(196,23,12); /* Fundo vermelho */
+    border: 1px solid rgb(196,23,12);
+    color: white;
+    font-size: 16px; /* Ajuste conforme a sua logo */
+    font-weight: bold;
+    height: 40px; /* Mesma altura da logo */
+    padding: 0 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone ☰ e a palavra MENU */
+}
+
+.logo {
+    height: 40px; /* Definindo a altura da logo */
+}
+
+.secao {
+    font-size: 32px; /* Fonte maior para POLÍTICA */
+    font-weight: 400;
+    flex: 1;
+    text-align: center;
+}
+
+.lado-direito {
+    display: flex;
+    justify-content: flex-end;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.busca {
+    background-color: rgb(145, 13, 3);
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* O estado inicial escondido */
+.menu-lateral {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 9999; /* Garante que fique na frente de tudo */
+    top: 0;
+    left: -300px; /* Escondido */
+    background-color: white;
+    transition: 0.3s; /* Velocidade da animação */
+    overflow-y: auto; /* Permite rolar se a lista for grande */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+/* O estado quando a classe 'aberto' é adicionada pelo JS */
+.menu-lateral.aberto {
+    left: 0;
+}
+
+/* Botão de fechar */
+.fechar-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* Remove as bolinhas da lista */
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo de cada link da lista */
+.menu-lateral ul li a {
+    display: flex;
+    justify-content: space-between; /* Coloca o texto na esquerda e a seta na direita */
+    align-items: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: #444; /* Cor cinza do texto */
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', Arial, sans-serif;
+    border-bottom: 1px solid #f0f0f0; /* Aquela linha leve entre os itens */
+}
+
+/* Efeito de passar o mouse */
+.menu-lateral ul li a:hover {
+    background-color: #f9f9f9;
+    color: #b31414; /* O texto fica vermelho ao passar o mouse */
+}
+
+/* A setinha (>) no final de cada item */
+.menu-lateral ul li a::after {
+    content: ">";
+    color: #ccc; /* Cor da setinha */
+    font-weight: bold;
+}
+
+.conteudo-noticia {
+    max-width: 700px; /* Largura da coluna de texto */
+    margin: 40px auto; /* Centraliza a notícia na tela */
+    padding: 0 20px;
+    font-family: 'Georgia', serif; /* Fonte clássica de jornal */
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.resumo {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.meta-dados {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.meta-dados span {
+    color: #b31414; /* Cor dos nomes dos autores */
+    font-weight: bold;
+}
+
+.botoes-compartilhar {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.botoes-compartilhar {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-share {
+    background-color: white; /* Fundo branco */
+    border: 1px solid #ddd;  /* Borda leve para dar acabamento */
+    border-radius: 8px;      /* Cantos arredondados */
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Aumente o valor de width para deixar o botão mais largo */
+    width: 350px;             
+    height: 50px;        
+    transition: 0.2s;
+}
+
+.btn-share:hover {
+    background-color: #f9f9f9; /* Leve cinza ao passar o mouse */
+}
+
+.btn-share img {
+    width: 35px;             /* Tamanho da imagem dentro do botão */
+    height: 35px;
+    object-fit: contain;
+    
+}
+
+.bloco-texto-imagem {
+    overflow: hidden; /* Isso garante que o container englobe a imagem flutuante */
+    margin-bottom: 20px;
+}
+
+.img-bbb {
+    float: right;      /* Empurra a imagem para a direita e faz o texto subir */
+    width: 300px;      /* Ajuste a largura conforme necessário */
+    margin-left: 20px; /* Cria um espaço entre a imagem e o texto */
+    margin-bottom: 10px;
+}
+
+/* O estilo do parágrafo de destaque no final */
+.destaque-reciprocidade {
+    background-color: #fce8e8; /* Fundo levemente rosado/vermelho */
+    padding: 10px;
+    border-left: 4px solid #b31414; /* Borda vermelha lateral */
+    font-weight: 500;
+}
+
+.container-publicidade {
+    text-align: center;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.label-pub {
+    display: block;
+    font-family: sans-serif;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.banner-img {
+    max-width: 970px; /* Largura máxima do banner original */
+    width: 100%;      /* Faz ele diminuir em telas menores */
+    height: auto;
+    cursor: pointer;
+}
+
+.mais-lidas {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.mais-lidas h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.mais-lidas ol {
+    list-style: none; /* Remove o marcador padrão para estilizar o número */
+    counter-reset: item;
+}
+
+.mais-lidas ol li {
+    margin-bottom: 25px;
+    counter-increment: item;
+}
+
+/* Estilo do número grande (1, 2, 3...) */
+.mais-lidas ol li::before {
+    content: counter(item);
+    font-size: 40px;
+    color: #ccc;
+    font-weight: bold;
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+.mais-lidas ol li a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+}
+
+.titulo-lida {
+    font-size: 18px;
+    font-weight: bold;
+    color: #b31414; /* Cor vermelha do G1 */
+    width: 60%;
+}
+
+.mais-lidas img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: rgb(196,23,12); /* Vermelho G1 */
+    color: white;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    height: 30px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.footer-left span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-left p {
+    font-size: 12px;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.g1-politica {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
